@@ -128,7 +128,10 @@
         [self.placeholderLabel sizeToFit];
         CGRect rect = CGRectZero;
         rect.size = self.placeholderLabel.frame.size;
-        rect.origin = caretRect.origin;
+		
+		// I find the caret isn't located in quite the same place as text will be
+        rect.origin = CGPointMake(caretRect.origin.x + 1, caretRect.origin.y + 1);
+		
         self.placeholderLabel.frame = rect;
     }
     return caretRect;
