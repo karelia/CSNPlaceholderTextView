@@ -83,6 +83,11 @@
     [self updatePlaceholderLabelVisibility];
 }
 
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+	[super setAttributedText:attributedText];
+	[self updatePlaceholderLabelVisibility];
+}
+
 - (NSString *)placeholder
 {
     return self.placeholderLabel.text;
